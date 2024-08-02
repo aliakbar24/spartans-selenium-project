@@ -30,6 +30,7 @@ public class windowHandling {
 
         //Step 3- Switch to new tab.
         for(String tab : allTabs){
+            //Finding the id for the new tab
             if(!tab.equals(currentWindowId)){
                 driver.switchTo().window(tab);
                 break;
