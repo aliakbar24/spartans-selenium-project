@@ -2,11 +2,14 @@ package utilityPractice;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
 import java.time.Duration;
+import java.util.List;
 
 public class seleniumUtility {
 
@@ -34,5 +37,8 @@ public class seleniumUtility {
         String text = wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).getText();
         System.out.println(text);
         return text;
+    }
+    public List<WebElement> getElements(By locator){
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
     }
 }
