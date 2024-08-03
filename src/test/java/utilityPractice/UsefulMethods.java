@@ -2,6 +2,7 @@ package utilityPractice;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -21,5 +22,15 @@ public class UsefulMethods {
         //If tyre means it is enabled. If false means element is disables.
         boolean isButtonEnabled = driver.findElement(By.id("loginBtn")).isEnabled();
         System.out.println(isButtonEnabled);
+
+        //getting attribute values
+        WebElement newCompanyElement = driver.findElement(By.id("newCompanyAccount"));
+
+        String hrefAttribute = newCompanyElement.getAttribute("href");
+        System.out.println(hrefAttribute);
+
+        String classAttribute = newCompanyElement.getAttribute("class");
+        System.out.println(classAttribute);
+        driver.quit();
     }
 }
